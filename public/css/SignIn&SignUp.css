@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    font-weight: bold;
+}
+
+body {
+    color: #874356;
+    height: 180vh;
+    background: linear-gradient(90deg, #F68989, #C65D7B), url(../images/c.jpg) repeat;
+    background-blend-mode: screen;
+    position: relative;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.img {
+    z-index: 1;
+    width: 150px;
+}
+
+
+/* content  */
+
+div.login-wrap {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 50px;
+}
+
+.login-wrap {
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background: linear-gradient(90deg, #C65D7B, #F68989), url(../images/image1.jpg) center;
+    background-size: cover;
+    background-blend-mode: screen;
+    box-shadow: 0 12px 15px 0 #F68989, 0 17px 50px 0 rgb(0 0 0 / 19%);
+    border-radius: 5%;
+}
+
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(201, 204, 213, 0.8);
+    border-radius: 5%;
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check {
+    display: none;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button {
+    text-transform: uppercase;
+}
+
+.login-html .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 50px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+.login-html .sign-in:checked+.tab,
+.login-html .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #874356;
+}
+
+.login-form {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.login-form .group {
+    margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-form .group .input {
+    width: 100%;
+    color: #874356;
+    display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: #F6E7D8;
+}
+
+.login-form .group input[data-type="password"] {
+    -webkit-text-security: circle;
+}
+
+.login-form .group .label {
+    color: white;
+    font-size: 12px;
+}
+
+.login-form .group .button {
+    background: #874356;
+}
+
+.login-form .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1);
+}
+
+.login-form .group label .icon:before,
+.login-form .group label .icon:after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s;
+}
+
+.login-form .group label .icon:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0);
+}
+
+.login-form .group label .icon:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0);
+}
+
+.login-form .group .check:checked+label {
+    color: #fff;
+}
+
+.login-form .group .check:checked+label .icon {
+    background: #874356;
+}
+
+.login-form .group .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg);
+}
+
+.login-form .group .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg);
+}
+
+.login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+    transform: rotate(0);
+}
+
+.login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+    transform: rotate(0);
+}
+
+.hr {
+    height: 2px;
+    margin: 25px 0 50px 0;
+    background: rgba(255, 255, 255, .2);
+}
+
+.foot-lnk {
+    text-align: center;
+}
+
+a.link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #874356 !important;
+    padding: 14px 24px;
+    border-radius: 10px;
+}
+
+i.fa-brands.fa-google {
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.back {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+i.fa-solid.fa-house-laptop {
+    margin-right: 10px;
+}
+
+
+/* footer css */
+
+footer {
+    width: 100%;
+    background-color: #874356;
+    min-height: 100px;
+    bottom: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background: linear-gradient(90deg, #874356, #C65D7B);
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    margin: auto 10%;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
+    text-decoration: none;
+}
+
+.footer .box-container .box a#email {
+    font-size: 1.1rem;
+}
+
+.footer .box-container .box a i {
+    padding-right: .5rem;
+    color: var(--main-color);
+    transition: 0.7s ease;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 1.5rem;
+    color: #fff;
+}
+
+.footer .credit {
+    text-align: center;
+    border-top: .1rem solid #edb70e;
+    color: #fff;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.footer .credit span a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0px;
+}
+
+a,
+label,
+input#signin,
+input#signUp{
+    cursor: pointer;
+}
+
+/* footer css end */
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media screen and (max-width: 600px) {
+    .login-html .tab {
+        margin: 0 10px 10px 0;
+        font-size: 16px;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media screen and (min-width:601px) and (max-width: 767px) {}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {}
+
+@media screen and (min-width: 1200px) and (max-width: 1300px) {}

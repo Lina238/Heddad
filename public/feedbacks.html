@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/feedbacks.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <title>Haddad</title>
+</head>
+
+<body>
+    <div class="layer"></div>
+    <div class="header">
+        <nav>
+            <img class="logo" src="images/LOGO.png" alt="">
+
+            <div class="links">
+                <ul>
+                    <li><i class="fa-solid fa-user" onclick="affichage()"></i>
+                        <ul class="box1" id="les cases">
+                            <li><a href="changeMotdepasse.html" classe="mot"><i class="fa-solid fa-gears"></i>Changer le mot de passe</a></li>
+                            <li><a onclick="LogoutUser()"><i class="fa-solid fa-right-from-bracket"></i>Déconnexion</a></li>
+                          
+                                  
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="check">
+                <div class="search-box">
+                    <input type="text" placeholder="Recherchez...">
+
+                    <label for="check" class="icon">
+                    <i class="fas fa-search"></i>
+                </label>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end navbar -->
+    <section class="content">
+        <aside>
+            <ul>
+                <li><a href="cuisiniers.html"><i class="fas fa-utensils"></i>Les cuisiniers</a></li>
+                <li><a href="Djs.html"><i class="fa-solid fa-music"></i>Les Djs</a></li>
+                <li><a href="photographe.html"><i class="fa-solid fa-music"></i>les photographes</a></li>
+                <li><a href="moments.html"><i class="fa-solid fa-photo-film"></i>Vos souvenirs </a></li>
+                <li><a href="reserve.html"><i class="fa-solid fa-calendar-days"></i>Réservation</a></li>
+                <li><a href="feedbacks.html"><i class="fa-solid fa-star"></i>Feedbacks</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <div class="container1">
+                <h1>Feedbacks</h1>
+                <p>Notre salle des fêtes met à votre disposition ce champ dans notre site web pour avoir la possiblité de vous exprimer et de donner vos avis librement et de voir aussi les avis des autres clients pour nous aider à nous améliorer.</p>
+                <img src="images/Feedback-pana.svg" alt="">
+                <div class="container2">
+                    <div class="post">
+                        <div class="text">Merci pour l'evaluation :)</div>
+                        <div class="edit">Fermer</div>
+                    </div>
+                    <div class="star-widget">
+                        <input type="radio" name="rate" id="rate-5" value="5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-4" value="4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-3" value="3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-2" value="2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-1" value="1">
+                        <label for="rate-1" class="fas fa-star"></label>
+                        <form action="#">
+                            <header></header>
+                            <div class="textarea">
+                                <textarea cols="30" id="feedback" placeholder="Racontez votre experience.."></textarea>
+                            </div>
+                            <div class="btn">
+                                <button type="submit" id="post" onclick="feedbacks()">Post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module">
+           // Import the functions you need from the SDKs you need
+        
+           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+           import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+           import{getDatabase,ref,set,child,update,remove} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"
+           import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+           // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+           const firebaseConfig = {
+               apiKey: "AIzaSyAUiRfbDOqgc1dGJ_Yd_o3hsNouDTkKmmA",
+               authDomain: "haddad-4bc6b.firebaseapp.com",
+               databaseURL: "https://haddad-4bc6b-default-rtdb.firebaseio.com",
+               projectId: "haddad-4bc6b",
+               storageBucket: "haddad-4bc6b.appspot.com",
+               messagingSenderId: "716967312183",
+               appId: "1:716967312183:web:51b06d1842a995967eb8b2",
+               measurementId: "G-6JGHXPGSX3"
+           };
+           
+           firebase.initializeApp(firebaseConfig)  
+           adminhtmlinit2();
+       
+
+        </script>
+
+        <script src=" https://smtpjs.com/v3/smtp.js"></script>
+        <script src="js/document.js"></script>
+</body>
+
+</html>

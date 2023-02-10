@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@firebase/firestore": "^3.4.8",
+    "firebase": "^9.6.11",
+    "firebaseui": "^6.0.1"
+  },
+  "name": "projet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

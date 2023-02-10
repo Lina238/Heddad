@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+
+    <title>Acceuille</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="layer"></div>
+    <div class="header">
+        <nav>
+            <img class="logo" src="images/LOGO.png" alt="">
+
+            <div class="links">
+                <ul>
+                    <li id="LiServices"><a href="#Services"><i class="fa-solid fa-heart-circle-plus"></i>Services</a></li>
+                    <li id="LiAboutUs"><a href="#About_us"><i class="fa-solid fa-circle-info"></i>À propos de nous</a></li>
+                    <li id="LiOurGalerie"><a href="#Our_Galerie"><i class="fa-solid fa-image"></i>Notre Galerie</a></li>
+                    <li id="LiReviews"><a href="#Reviews"><i class="fa-solid fa-star"></i>Avis des clients</a></li>
+                    <li id="LiBars" class="bars"><i class="fa-solid fa-bars" onclick="affichage()"></i>
+                        <ul class="box1">
+                            <li id="LiServices"><a href="#Services"><i class="fa-solid fa-heart-circle-plus"></i>Services</a></li>
+                            <li id="LiAboutUs"><a href="#About_us"><i class="fa-solid fa-circle-info"></i>À propos de nous</a></li>
+                            <li id="LiOurGalerie"><a href="#Our_Galerie"><i class="fa-solid fa-image"></i>Notre Galerie</a></li>
+                            <li id="LiReviews"><a href="#Reviews"><i class="fa-solid fa-star"></i>Avis des clients</a></li>
+                            <li><a href="#Contact_us"><i class="fa-solid fa-address-book"></i>Contactez-nous</a></li>
+                            <li><a href="SignInSignUp.html" target="blank"><i class="fa-solid fa-at"></i>Connexion</a></li>
+                            <li>
+                                <a href="SignInSignUp.html" target="blank" class="reservation"><i class="fa-solid fa-calendar-days"></i>Réservation</a>
+                            </li>
+                            <li><a href="poste.html" class="poste" target="blank"><i class="fa-solid fa-briefcase"></i>Poste d'emploi</a></li>
+                        </ul>
+                    </li>
+                    <li id="LiNotification"><i class="fa-regular fa-bell" onclick="affichage1()"></i>
+                        <p class="notification">Pas de notification :( <br>Se connecter ou créer un compte</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="check">
+                <div class="search-box">
+                    <input type="text" placeholder="Recherchez...">
+                    <label for="check" class="icon">
+                    <i class="fas fa-search"></i>
+                </label>
+                </div>
+            </div>
+        </nav>
+        <!-- end navbar -->
+        <section class="content_body">
+            <aside>
+                <h1>Salle des fêtes Haddad</h1>
+                <span>Un espace convivial et chaleureux pour y célébrer votre fête. En plus d’une salle des fêtes principale d'une capacité de 200 personnes , profitez d'une salle dînatoire spacieuse mise à votre disposition ainsi qu’un service traiteur et une équipe de serveur(se)s..Notre salle met également à votre disposition une chambre pour la mariée , et les invités aussi. Sans oublier la chambre où vous pourrez disposer vos gâteaux et/ou cadeaux.</span>
+                <a class="button" href="#About_us">Voir plus</a>
+            </aside>
+            <img src="images/Wedding Planner.png" alt="" width="650px">
+            <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#F6E7D8 " fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,165.3C672,128,768,64,864,58.7C960,53,1056,107,1152,122.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </section>
+    </div>
+    <div class="secondary_content">
+        <section class="service" id="Services">
+            <h1 class="heading"> Nos <span>services</span> </h1>
+
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localisation</h3>
+                    <p>Venez profiter de notre salle des fêtes située à Lot.N° Metiji(Gare) à la Daira d'Akbou wilaya de Bejaia.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Cartes d'invitation</h3>
+                    <p>Notre salle des fêtes vous offre des cartes d'invitation gratuites faites à partir des modéles de votre choix.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-music"></i>
+                    <h3>Musique</h3>
+                    <p>Partagez avec nous vos playlists et vos chanteurs ou musiciens préférés pour qu'ils soient disponibles dans votre fête.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Le menue</h3>
+                    <p>Faites la liste de vos plats préférés pour profiter de nos meilleurs chefs et cuisiniers.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-photo-video"></i>
+                    <h3>Vos fêtes</h3>
+                    <p>Partagez ici les photos et les vidéos de vos fêtes pour decouvrir plus de qualités et offres de notre salle des fêtes.</p>
+                </div>
+
+                <div class="box">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h3>Les mariés</h3>
+                    <p>Venez découvrir ici les offres spéciaux que propose notre salle pour les mariés.</p>
+                </div>
+
+            </div>
+            <div class="box-container2">
+                <a href="SignInSignUp.html" target="blank">
+                    <div class="card">
+                        <div class="card-image" id="img1"></div>
+                        <div class="card-text">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <h2>Réservation</h2>
+                            <p>Ne tardez pas! Cliquez ici et réservez maintenant. </p>
+                        </div>
+                        <div class="card-stats">
+                        </div>
+                    </div>
+                </a>
+                <a href="poste.html" target="blank">
+                    <div class="card">
+                        <div class="card-image" id="img2"></div>
+                        <div class="card-text">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <h2>Poste d'emploi</h2>
+                            <p>Si vous êtes à la recharche d'un emploi, alors cliquez ici !! et postulez immédiatement.</p>
+                        </div>
+                        <div class="card-stats">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <svg class="wave2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#F68989" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,165.3C672,128,768,64,864,58.7C960,53,1056,107,1152,122.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="third_content">
+        <section class="about" id="About_us">
+
+            <h1 class="heading"><span>À propos</span> de nous </h1>
+
+            <div class="row">
+
+                <div class="image">
+                    <img src="images/about-img.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <h3>Pourquoi sommes-nous la meilleure déstination pour organiser votre fête?</h3>
+                    <p>La salle des fêtes HADDAD se situe à Lot. N° 37 Metidji (Gare) à côté de cimetière de chouhada ,daira d'akbou,wilaya de Bejaia.Notre salle des fêtes est vraiment ancienne avec plus de 16ans d'expérience.</p>
+                    <p>La salle contient une salle principale de 200 places et une salle dinatoire spacieuse ainsi qu’un service traiteur et une équipe de serveur(se)s,elle contient aussi une chambre pour la mariée ,une autre pour les invités et une pour
+                        les cadeaux et les gateaux.Pour les hommes ,la salle contient aussi un espace spécial et une salle dinatoire aussi,et pour l'entourage un parking de vehiculs d'une capacité moyenne(100vehiculs).</p>
+                    <p>Notre salle met à votre disposition plusieurs services et offres à ne pas rater pour que votre fête soit idéale.</p>
+                    <p>Alors n'hésitez pas, cherchez l'icone de résérvation et faites nous confiance!</p>
+                    <p>Et si vous êtes un chercheur de travail , allez à nos services et postulez maintenant!</p>
+                    <a href="#Contact_us" class="btn">CONTACTEZ-NOUS</a>
+                </div>
+
+            </div>
+
+
+        </section>
+        <svg class="wave3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#F6E7D8" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,165.3C672,128,768,64,864,58.7C960,53,1056,107,1152,122.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="fourth_content">
+        <section class="home" id="Our_Galerie">
+            <h1 class="heading">Notre <span>Galerie</span></h1>
+            <div class="swiper-container home-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/salle1.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle2.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle3.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle4.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle5.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle6.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle7.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle8.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle9.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle10.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle11.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/salle12.jpeg" alt=""></div>
+
+                    
+                </div>
+            </div>
+            <svg class="wave4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#C65D7B" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,165.3C672,128,768,64,864,58.7C960,53,1056,107,1152,122.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        </section>
+    </div>
+    <div class="fifth_content">
+        <section class="reivew" id="Reviews">
+            <h1 class="heading">Avis des<span> clients</span></h1>
+
+            <div class="review-slider swiper-container">
+
+                <div class="swiper-wrapper" id="box">
+
+
+
+
+                </div>
+            </div>
+
+        </section>
+        <svg class="wave5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#F6E7D8" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,165.3C672,128,768,64,864,58.7C960,53,1056,107,1152,122.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    </div>
+    <div class="sixth_content">
+        <section class="contact" id="Contact_us">
+            <h1 class="heading"> <span>Contactez-</span>nous </h1>
+
+            <form action="" onsubmit="return false">
+                <div class="inputBox">
+                    <input id="fname" type="text" placeholder="Nom complet">
+                    <input id="femail" type="email" placeholder="Email">
+                </div>
+                <textarea name="" placeholder="Votre message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" id='feedbacks' value="Envoyer" class="btn" onclick="contactuss(); sendEmail()">
+            </form>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102667.35104676426!2d4.620155762986493!3d36.473147692205764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2sdz!4v1650452819852!5m2!1sar!2sdz" width="95%" height="300" style="border:0; margin-left: 2.5%;
+                margin-right: auto;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="contact_info">
+                    <h3>Contact informations</h3>
+                    <a href="#"> <i class="fas fa-phone"></i> +213771 30 85 94 </a>
+                    <a href="#"> <i class="fas fa-phone"></i> +213560 32 08 43 </a>
+                    <a href="#"> <i class="fas fa-envelope"></i> salledesfeteshaddad67@gmail.com </a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i>Lot. N° 37 Metidji (Gare) Akbou, Bejaia </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Raccourcies</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i> Acceuille </a>
+                <a href="#Services"> <i class="fas fa-arrow-right"></i> Nos services </a>
+                <a href="#About_us"> <i class="fas fa-arrow-right"></i> À propos de nous </a>
+                <a href="#Our_Galerie"> <i class="fas fa-arrow-right"></i> Notre galerie </a>
+                <a href="#Reviews"> <i class="fas fa-arrow-right"></i> Les avis des clients </a>
+                <a href="#Contact_us"> <i class="fas fa-arrow-right"></i> Contactez-nous </a>
+            </div>
+
+            <div class="box contactfooter">
+                <h3>Contact </h3>
+                <a href="#"> <i class="fas fa-phone"></i> +213771 30 85 94 </a>
+                <a href="#"> <i class="fas fa-phone"></i> +213560 32 08 43 </a>
+                <a href="#" id="emailcontact"> <i class="fas fa-envelope"></i> salledesfeteshaddad67@gmail.com </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i>Lot. N° 37 Metidji (Gare) Akbou, Bejaia </a>
+            </div>
+
+            <div class="box">
+                <h3>Rejoignez nous</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
+            </div>
+        </div>
+        <div class="credit"> Tous droits réservés 2022. </div>
+
+
+    </section>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+            import{getDatabase,ref,set,child,update,remove} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"
+            import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyAUiRfbDOqgc1dGJ_Yd_o3hsNouDTkKmmA",
+                authDomain: "haddad-4bc6b.firebaseapp.com",
+                databaseURL: "https://haddad-4bc6b-default-rtdb.firebaseio.com",
+                projectId: "haddad-4bc6b",
+                storageBucket: "haddad-4bc6b.appspot.com",
+                messagingSenderId: "716967312183",
+                appId: "1:716967312183:web:51b06d1842a995967eb8b2",
+                measurementId: "G-6JGHXPGSX3"
+            };
+        
+            firebase.initializeApp(firebaseConfig) 
+            function affichagefeedbacks(){
+
+                var firebaseref=firebase.database().ref("feedbacks");
+                firebaseref.once("value",function(snapshot){
+                    var data=snapshot.val();
+                    var f="";
+                let list=document.getElementById("box");
+                    for(let i in data){
+                    f=
+                    `<div class="swiper-slide box1" >`+" "+
+                    
+                    `<div class="user">`+" "+
+                    ` <img src="images/R.png" alt="">`+" "+
+                    `<div class="user-info">`+" "
+                        if(data[i].googleUsername==null){
+            
+                        f+=`<h3>${data[i].username}</h3>`+" "
+                        }
+                        else{
+                            f+=`<h3>${data[i].googleUsername}</h3>`+" "
+                        }
+                        f+= `<div class="stars">`+" "
+                        for(let j=0;j<parseInt(data[i].etoiles);j++){
+            
+                        f+= `<i class="fa-solid fa-star"></i>`+" "}
+                        f+=  `</div>`+" "+
+                        `</div>`+" "+
+            
+                        `</div>`+" "+
+                        `<p>${data[i].feedback}</p>`+" "+`</div>`+" "
+                        
+                        
+                    list.innerHTML+=f;
+                    f="";
+                    console.log(f); 
+            
+                    
+            }}
+            
+            )
+            
+            }
+            affichagefeedbacks(); 
+    </script>
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init("36n3lTfz6064JBZPi");
+    })();
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    function sendEmail(){
+    var tm={
+        to_name:"Heddad",
+        from_name:document.getElementById('fname').value,
+        email_id:document.getElementById('femail').value,
+        message:document.getElementById('message').value,
+        
+    }
+        emailjs.send('service_eug6vgi','template_sk5oepk',tm,'36n3lTfz6064JBZPi')
+        .then(function(res){
+            alert("message envoyé",res.status);
+        })
+
+        };
+
+
+    </script>
+    <script src="js/document.js"></script>
+
+    <script src="js/calendar.js"></script>
+</body>
+
+</html>
